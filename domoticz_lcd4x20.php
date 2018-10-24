@@ -20,20 +20,22 @@ while (1) {
         $parsed_json = $parsed_json['result'][1];
         $temp = $parsed_json['Temp'];
         echo "Temperature ".$temp." C"."\n";
-        fputs($lcd,"Temp = ".$temp." C"."\n");
+        fputs($lcd,"Ext temp ".$temp." C"."\n");
         $parsed_json = json_decode($json_string, true);
         $parsed_json = $parsed_json['result'][1];
         $hum = $parsed_json['Humidity'];
         echo "Humidity ".$hum." %"."\n";
-        fputs($lcd,"Hum  = ".$hum." %"."\n");
+        fputs($lcd,"Ext hum  ".$hum." %"."\n");
         $parsed_json = json_decode($json_string, true);
         $parsed_json = $parsed_json['result'][0];
         $bar = $parsed_json['Barometer'];
         echo "Barometer ".$bar." mBar"."\n";
-        fputs($lcd,"Bar  = ".$bar." mBar"."\n");
+        fputs($lcd,"Barom    ".$bar." mb"."\n");
         echo  date("H:i d-m-Y")."\n";
-        fputs($lcd,date("H:i     d-m-Y"."\n"));
+        fputs($lcd,date("H:i    d-m-Y"."\n"));
         sleep(30);
         fputs($lcd,chr(12));
 }
 ?>
+
+   
