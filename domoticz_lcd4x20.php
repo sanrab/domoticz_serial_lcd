@@ -10,7 +10,7 @@
 //	fclose($lcd);
 
 while (1) {
-	$json_string = file_get_contents("http://192.168.1.118:8080/json.htm?type=devices&used=true&filter=all&favorite=1");
+	$json_string = file_get_contents("http://DOMOTICZ_URL:DOMOTICZ_PORT/json.htm?type=devices&used=true&filter=all&favorite=1");
 	$parsed_json = json_decode($json_string, true);
 	$link = "/var/tmp/data.json";
 	$data = fopen ($link, "w+");
